@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'thread/index'
+  get 'comments/index'
+  get 'topics/index'
   root 'pages#index'
   get 'pages/index'
 
