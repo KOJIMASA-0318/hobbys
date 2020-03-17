@@ -1,1 +1,40 @@
 <h1>Topics#show</h1>
+
+<table>
+  <tr class="table-info">
+    <td colspan="2"><%= @topic.title %></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>投稿者:</td>
+    <td><%= @topic.user.name %></td>
+  </tr>
+  <tr>
+    <td>投稿日:</td>
+    <td><%= @topic.created_at %></td>
+  </tr>
+  <tr>
+    <td>内容:</td>
+    <td><%= @topic.body %></td>
+  </tr>
+</table>
+
+<%= link_to "レスをする", new_topic_comment_path(params[:id]) %></br>
+<p>▽コメント</p>
+
+<% @comments.each do |comment| %>
+  <table>
+    <tr>
+      <td>投稿者:</td>
+      <td><%= comment.user.name %></td>
+    </tr>
+    <tr>
+      <td>投稿日:</td>
+      <td><%= comment.created_at %></td>
+    </tr>
+    <tr>
+      <td>内容:</td>
+      <td><%= comment.body %></td>
+    </tr>
+  </table>
+<% end %>
