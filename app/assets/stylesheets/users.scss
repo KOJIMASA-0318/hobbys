@@ -1,0 +1,30 @@
+.top-wrapper {
+  width: 100vw;
+  height: 90vh;
+  background-size: cover;
+  background-image: url("./topbg.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  position: absolute;
+}
+
+.top-container{
+  height: 70vh;
+  margin-top: 30px;
+  padding-top: 3vh;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 10px;
+}
+
+.top-container .container {
+  margin-top: 5vh;
+  margin-bottom: 8vh;
+}
+
+.top-container .field {
+  margin-top: 2vh;
+}
+
+.top-container .actions {
+  margin-top: 5vh;
+}
