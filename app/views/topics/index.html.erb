@@ -4,7 +4,7 @@
   <tr>
     <th>Title</th>
     <th>body</th>
-    <th>Category</th>
+    <th>Category_id</th>
     <th>user_name</th>
     <th></th>
     <th></th>
@@ -14,7 +14,7 @@
     <tr>
       <td><%= link_to topic_path(topic.id) do %><%= topic.title %><% end %></td>
       <td><%= topic.body %></td>
-      <td><%= topic.category %></td>
+      <td><%= topic.category_id %></td>
       <td><%= topic.user.name %></td>
       <td><%= link_to edit_topic_path(topic.id) do %>編集<% end %></td>
       <td><%= link_to topic_path(topic.id) ,method: :delete do %>削除<% end %></td>
