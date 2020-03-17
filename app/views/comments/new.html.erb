@@ -1,0 +1,22 @@
+<h1>Comments#new</h1>
+
+<%= form_with(model: [@topic, @comment], url: topic_comments_path, local: true) do |form| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, :rows => "5", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-outline-primary btn-block" %>
+  </div>
+<% end %>
