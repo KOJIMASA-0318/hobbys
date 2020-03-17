@@ -15,22 +15,27 @@
 
   <body>
     <header>
-      <nav>
+      <nav class="navbar navbar-light bg-light">
         <% if user_signed_in? %>
-          <strong>Login account : <%= current_user.name %></strong>
-          <strong><%= link_to "Home", bbs_path %></strong>
-          <%= link_to 'プロフィール変更', edit_user_registration_path %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <%= link_to  bbs_path, class: "navbar-brand mr-auto" do %>
+            <%= image_tag "logos.png" %>
+          <% end %>
+          <ul class="navbar-nav">
+            <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-item nav-link" %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
+          </ul>
         <% else %>
-          <%= link_to 'サインアップ', new_user_registration_path %>
-          <%= link_to 'ログイン', new_user_session_path %>
+        <%= link_to  bbs_path, class: "navbar-brand mr-auto" do %>
+          <%= image_tag "logom.png" %>
+        <% end %>
+        <p class="nav-item mr-auto">趣味を語る掲示板</p>
+        <ul class="navbar-nav">
+          <%= link_to '新規登録', new_user_registration_path, class: "nav-item nav-link" %>
+          <%= link_to 'ログイン', new_user_session_path, class: "nav-item nav-link" %>
+        </ul>
         <% end %>
       </nav>
     </header>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </body>
 </html>

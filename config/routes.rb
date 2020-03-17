@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'pages#index'
-  get 'pages/index'
+  devise_scope :user do
+   root "users/sessions#new"
+  end
+
   get 'bbs', to: 'pages#main', as: 'bbs'
 
   resources :topics do
