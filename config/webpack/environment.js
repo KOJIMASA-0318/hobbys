@@ -7,12 +7,12 @@ environment.loaders.prepend('vue', vue)
 environment.config.resolve.alias = {'vue$': 'vue/dist/vue.esm.js' }
 // jQueryとBootstapのJSを使えるように
 const webpack = require('webpack')
-environment.plugins.prepend(
-  'Provide',
+environment.plugins.prepend('Provide',
   new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    Popper: 'popper.js'
+    $: 'jquery/src/jquery',
+    jQuery: 'jquery/src/jquery',
+    Popper: ['popper.js', 'default']
   })
+)
 )
 module.exports = environment

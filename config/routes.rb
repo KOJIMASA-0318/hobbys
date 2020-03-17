@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  get 'comments/index'
-  get 'topics/index'
+
   root 'pages#index'
   get 'pages/index'
+  get 'bbs', to: 'pages#main', as: 'bbs'
+
+  resources :topics do
+    resources :comments
+  end
 
   devise_for :users, controllers: {
         registrations: 'users/registrations',
